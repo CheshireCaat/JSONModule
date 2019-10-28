@@ -1,0 +1,239 @@
+{
+	
+	"name":"JSON",
+	"info":
+	{
+		"en": "Work with JSON and JPath", 
+		"ru": "Работа с JSON и JPath"
+	},
+	"icon": "json.png",
+	"description":"JSON",
+	"description_small":
+	{
+		"en": "JSON", 
+		"ru": "JSON"
+	},
+	"major_version": 1,
+	"minor_version": 0,
+	"developer_name": "Oyasumi Punpun", 
+	"developer_email": "likangt2012@gmail.com", 
+	"developer_site": "https://github.com/CheshireCaat",
+	"api_version": 1,
+	"actions":
+	[
+		{
+			"name":"JsonGetValue",
+			"description":
+			{
+				"en": "Get Value",
+				"ru": "Получить Значение"
+			},
+			"template": "{{String}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_parse_interface.js",
+			"select": "json_parse_select.js",
+			"code": 
+			[
+				{
+					"file":"json_parse_code.js", 
+					"name": "json_parse_code"
+				}
+			]
+		},
+		{
+			"name":"JsonGetKey",
+			"description":
+			{
+				"en": "Get Key",
+				"ru": "Получить Ключ"
+			},
+			"template": "{{String}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_key_parse_interface.js",
+			"select": "json_key_parse_select.js",
+			"code": 
+			[
+				{
+					"file":"json_key_parse_code.js", 
+					"name": "json_key_parse_code"
+				}
+			]
+		},
+		{
+			"name":"JsonGetAllValues",
+			"description":
+			{
+				"en": "Get All Values",
+				"ru": "Получить Все Значения"
+			},
+			"template": "{{String}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_parse_all_interface.js",
+			"select": "json_parse_all_select.js",
+			"code": 
+			[
+				{
+					"file":"json_parse_all_code.js", 
+					"name": "json_parse_all_code"
+				}
+			]
+		},
+		{
+			"name":"JsonGetAllKeys",
+			"description":
+			{
+				"en": "Get All Keys",
+				"ru": "Получить Все Ключи"
+			},
+			"template": "{{String}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_parse_keys_all_interface.js",
+			"select": "json_parse_keys_all_select.js",
+			"code": 
+			[
+				{
+					"file":"json_parse_keys_all_code.js", 
+					"name": "json_parse_keys_all_code"
+				}
+			]
+		},
+		{
+			"name":"JsonGetCount",
+			"description":
+			{
+				"en": "Elements Count",
+				"ru": "Количество Элементов"
+			},
+			"template": "{{Data}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_get_count_interface.js",
+			"select": "json_get_count_select.js",
+			"code": 
+			[
+				{
+					"file":"json_get_count_code.js", 
+					"name": "json_get_count_code"
+				}
+			]
+		},
+		{
+			"name":"JsonChangeFormat",
+			"description":
+			{
+				"en": "Change Format",
+				"ru": "Изменить Формат"
+			},
+			"template": "{{Data}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_change_format_interface.js",
+			"select": "json_change_format_select.js",
+			"code": 
+			[
+				{
+					"file":"json_change_format_code.js", 
+					"name": "json_change_format_code"
+				}
+			]
+		},
+		{
+			"name":"JsonCheckFormat",
+			"description":
+			{
+				"en": "Check if string matches JSON",
+				"ru": "Подходит ли строка под парсинг JSON"
+			},
+			"template": "{{TargetObject}} -> {{TargetFormat}}",
+			"is_element": false,
+			"interface": "json_check_interface.js",
+			"select": "json_check_select.js",
+			"code": 
+			[
+				{
+					"file":"json_check_code.js", 
+					"name": "json_check_code"
+				}
+			]
+		}
+	],
+	"localize": 
+	{
+		"See Full Documentation and Examples <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-en.html'); return false;\"><span class=\"tr\">Here</span></a>":
+		{
+			"ru":"Смотрите Полную Документацию и Примеры <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-ru.html'); return false;\"><span class=\"tr\">Здесь</span></a>"
+		},
+		"List of variable names separated by comma. Each variable will be set string or an array that matches JPath or simple JSON query and contain the value.":
+		{
+			"ru":"Список имен переменных, разделенных запятой. Каждая переменная будет равна строке или массиву, которые соответствуют JPath запросу или стаднартному парсингу JSON и содержат значение."
+		},
+		"List of variable names separated by comma. Each variable will be set string or an array that matches JPath or simple JSON query and contain the key.":
+		{
+			"ru":"Список имен переменных, разделенных запятой. Каждая переменная будет равна строке или массиву, которые соответствуют JPath запросу или стаднартному парсингу JSON и содержат ключ."
+		},
+		"This variable will be set string or an array that matches JPath or simple JSON query and contain the value.":
+		{
+			"ru":"Эта переменная будет равна строке или массиву, которые соответствуют JPath запросу или стаднартному парсингу JSON и содержат значение."
+		},
+		"This variable will be set string or an array that matches JPath or simple JSON query and contain the key.":
+		{
+			"ru":"Эта переменная будет равна строке или массиву, которые соответствуют JPath запросу или стаднартному парсингу JSON и содержат ключ."
+		},		
+		"This variable will be true or false depending on whether the string is a valid JSON string.":
+		{
+			"ru":"Эта переменная будет иметь значение true или false в зависимости от того, является ли строка допустимой строкой JSON."
+		},
+		"This variable will be set to number of elements matching JPath or simple JSON query.":
+		{
+			"ru":"Эта переменная будет равна количеству элементов, соответствующих JPath запросу или стаднартному парсингу JSON."
+		},
+		"Text, target of JPath or simple JSON query. You can put string in JSON format here.":
+		{
+			"ru":"Текст, к которому будет применяться JPath запрос или стандартный парсинг JSON. В это поле вы можете поместить строку в JSON формате."
+		},
+		"JPath query. Can be empty.":
+		{
+			"ru":"JPath запрос. Может быть пустым."
+		},
+		"String or object to parse": 
+		{
+			"ru":"Строка или объект для парсинга"
+		},
+		"Path to parse": 
+		{
+			"ru":"Путь для парсинга"
+		},
+		"Execute JPath query if needeed and get elements count.":
+		{
+			"ru":"Выполнить запрос JPath, если необходимо, и получить количество элементов."
+		},
+		"Execute JPath query if needeed and get all values.":
+		{
+			"ru":"Выполнить запрос JPath, если необходимо, и получить все значения."
+		},
+		"Execute JPath query if needeed and get one value.":
+		{
+			"ru":"Выполнить запрос JPath, если необходимо, и получить одно значение."
+		},
+		"Execute JPath query if needeed and get all keys.":
+		{
+			"ru":"Выполнить запрос JPath, если необходимо, и получить все ключи."
+		},
+		"Execute JPath query if needeed and get one key.":
+		{
+			"ru":"Выполнить запрос JPath, если необходимо, и получить один ключ."
+		},
+		"Check that selected variable is valid JSON string.":
+		{
+			"ru":"Проверить, что выбранная переменная является допустимой строкой JSON."
+		},
+		"Format":
+		{
+			"ru":"Формат"
+		}
+	},
+	"engine": 
+	[
+		"engine.js"
+	],
+	"browser": [],
+	"depends": []	
+}
