@@ -1,0 +1,1 @@
+<%= variable %> = JPath.checkFormat(<%= data %>);

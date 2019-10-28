@@ -1,56 +1,62 @@
-function JSONPathException(message) {
+function JSONPathError(message) {
     this.message = message;
     this.toString = function () {
-        return 'JSONPathException: ' + message;
+        return 'JSONPathError: ' + message;
     }
 }
 
 function JSONPath() {
-    this.changeFormat = function (data, format) {
+
+   var checkFormat = function (data) {
+      try {
+            JSON.parse(data);
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    }
+
+    var changeFormat = function (data, format) {
         switch (format.toLowerCase()) {
             case 'string': {
-               if (typeof data !== 'string') {
-                  return JSON.stringify(data);
-               }
-               
-               return data;
+                if (typeof data !== 'string') {
+                    return JSON.stringify(data);
+                }
+
+                return data;
             }
             case 'json': {
-               if (typeof data === 'string') {
-                  if (this.checkFormat(data)) {
-                     return JSON.parse(data);
-                  }
-               }
-               else {
-                  return data;
-               }
-        
-               throw new JSONPathException("Can't parse JSON from string.");
-            }  
-            default:
-               throw new JSONPathException("Invalid format type.");
+                if (typeof data === 'string') {
+                    if (checkFormat(data)) {
+                        return JSON.parse(data);
+                    }
+                    else {
+                        return undefined;
+                    }
+                }
+                else {
+                    return data;
+                }
+            }
+            default: throw new JSONPathError("Invalid format type.");
         }
     }
 
-    this.selectTokens = function (data, path) {
+    var getValues= function(data, path) {
+        data = changeFormat(data, 'json');
+
         if (path !== '') {
-            return jsonPath(data, path);
+            var json = jsonPath(data, path);
+            return typeof json === 'undefined' ? undefined : json;
         }
 
-        return changeFormat(data);
-    }
-
-    this.selectToken = function (data, path) {
-        if (path !== '') {
-            return jsonPath(data, path)[0];
-        }
-
-        return changeFormat(data);
+        return data;
     }
 
     this.getCount = function (data, path) {
         if (typeof data === 'string') {
-            data = this.changeFormat(data);
+            data = changeFormat(data, 'json');
         }
 
         if (path != '') {
@@ -60,15 +66,22 @@ function JSONPath() {
         return Object.keys(data).length;
     }
 
-    this.checkFormat = function (data) {
-        try {
-            JSON.parse(data);
-            return true;
-        }
-        catch (e) {
-            return false;
-        }
+    this.queryValues = function (data, path) {
+        var values = getValues(data, path);
+        return typeof values === 'undefined' ? 'undefined' : values;
     }
+
+    this.queryValue = function (data, path) {
+        var values = getValues(data, path);
+        /* 
+            If path is empty, should I return the first value from the object, 
+            the object itself or give an error?
+        */
+        return typeof values === 'undefined' ? 'undefined' : values[0];
+    }
+
+    this.checkFormat = checkFormat;
+    this.changeFormat = changeFormat;
 }
 
 const JPath = new JSONPath();
@@ -199,6 +212,6 @@ function jsonPath(data, expression, args) {
 
     if (expression) {
         parser.trace(parser.normalize(expression).replace(/^\$;?/, ""), data, '$');
-        return parser.result.length ? parser.result : null;
+        return parser.result.length ? parser.result : undefined;
     }
 }

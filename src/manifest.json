@@ -25,18 +25,18 @@
 			"name":"JsonGetValue",
 			"description":
 			{
-				"en": "Get Value",
-				"ru": "Получить Значение"
+				"en": "Get value",
+				"ru": "Получить значение"
 			},
-			"template": "{{String}} -> {{Save}}",
+			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_parse_interface.js",
-			"select": "json_parse_select.js",
+			"interface": "json_parse_value_interface.js",
+			"select": "json_parse_value_select.js",
 			"code": 
 			[
 				{
-					"file":"json_parse_code.js", 
-					"name": "json_parse_code"
+					"file": "json_parse_value_code.js", 
+					"name": "json_parse_value_code"
 				}
 			]
 		},
@@ -44,18 +44,18 @@
 			"name":"JsonGetKey",
 			"description":
 			{
-				"en": "Get Key",
-				"ru": "Получить Ключ"
+				"en": "Get key",
+				"ru": "Получить ключ"
 			},
-			"template": "{{String}} -> {{Save}}",
+			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_key_parse_interface.js",
-			"select": "json_key_parse_select.js",
+			"interface": "json_parse_key_interface.js",
+			"select": "json_parse_key_select.js",
 			"code": 
 			[
 				{
-					"file":"json_key_parse_code.js", 
-					"name": "json_key_parse_code"
+					"file": "json_parse_key_code.js", 
+					"name": "json_parse_key_code"
 				}
 			]
 		},
@@ -63,18 +63,18 @@
 			"name":"JsonGetAllValues",
 			"description":
 			{
-				"en": "Get All Values",
-				"ru": "Получить Все Значения"
+				"en": "Get all values",
+				"ru": "Получить все значения"
 			},
-			"template": "{{String}} -> {{Save}}",
+			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_parse_all_interface.js",
-			"select": "json_parse_all_select.js",
+			"interface": "json_parse_values_interface.js",
+			"select": "json_parse_values_select.js",
 			"code": 
 			[
 				{
-					"file":"json_parse_all_code.js", 
-					"name": "json_parse_all_code"
+					"file": "json_parse_values_code.js", 
+					"name": "json_parse_values_code"
 				}
 			]
 		},
@@ -82,18 +82,18 @@
 			"name":"JsonGetAllKeys",
 			"description":
 			{
-				"en": "Get All Keys",
-				"ru": "Получить Все Ключи"
+				"en": "Get all keys",
+				"ru": "Получить все ключи"
 			},
-			"template": "{{String}} -> {{Save}}",
+			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_parse_keys_all_interface.js",
-			"select": "json_parse_keys_all_select.js",
+			"interface": "json_parse_keys_interface.js",
+			"select": "json_parse_keys_select.js",
 			"code": 
 			[
 				{
-					"file":"json_parse_keys_all_code.js", 
-					"name": "json_parse_keys_all_code"
+					"file": "json_parse_keys_code.js", 
+					"name": "json_parse_keys_code"
 				}
 			]
 		},
@@ -101,8 +101,8 @@
 			"name":"JsonGetCount",
 			"description":
 			{
-				"en": "Elements Count",
-				"ru": "Количество Элементов"
+				"en": "Elements count",
+				"ru": "Количество элементов"
 			},
 			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
@@ -111,7 +111,7 @@
 			"code": 
 			[
 				{
-					"file":"json_get_count_code.js", 
+					"file": "json_get_count_code.js", 
 					"name": "json_get_count_code"
 				}
 			]
@@ -120,8 +120,8 @@
 			"name":"JsonChangeFormat",
 			"description":
 			{
-				"en": "Change Format",
-				"ru": "Изменить Формат"
+				"en": "Change format",
+				"ru": "Изменить формат"
 			},
 			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
@@ -130,7 +130,7 @@
 			"code": 
 			[
 				{
-					"file":"json_change_format_code.js", 
+					"file": "json_change_format_code.js", 
 					"name": "json_change_format_code"
 				}
 			]
@@ -142,14 +142,14 @@
 				"en": "Check if string matches JSON",
 				"ru": "Подходит ли строка под парсинг JSON"
 			},
-			"template": "{{TargetObject}} -> {{TargetFormat}}",
+			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
 			"interface": "json_check_interface.js",
 			"select": "json_check_select.js",
 			"code": 
 			[
 				{
-					"file":"json_check_code.js", 
+					"file": "json_check_code.js", 
 					"name": "json_check_code"
 				}
 			]
@@ -193,13 +193,17 @@
 		{
 			"ru":"JPath запрос. Может быть пустым."
 		},
-		"String or object to parse": 
+		"JSON string or object to parse": 
 		{
-			"ru":"Строка или объект для парсинга"
+			"ru":"JSON строка или объект для парсинга"
 		},
-		"Path to parse": 
+		"JPath query to parse": 
 		{
-			"ru":"Путь для парсинга"
+			"ru":"JPath запрос для парсинга"
+		},
+		"Variable to save":
+		{
+			"ru":"Переменная, в которую сохранить результат"
 		},
 		"Execute JPath query if needeed and get elements count.":
 		{
