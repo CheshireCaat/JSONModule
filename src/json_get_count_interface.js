@@ -8,7 +8,7 @@
 			value_string: "",
 			help: 
 			{
-				description:tr("Target of JPath or simple JSON query. You can put object or string in JSON format here.")
+				description:tr("JSON string or object to parse. You can specify a valid JSON string here or an object whose type is not simple.")
 			}
 		}) %>
 	<%= _.template($('#input_constructor').html())(
