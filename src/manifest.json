@@ -1,30 +1,25 @@
 {
-	
-	"name":"JSON",
-	"info":
-	{
-		"en": "Work with JSON and JPath", 
-		"ru": "Работа с JSON и JPath"
+	"name": "JSON",
+	"info": {
+		"en": "Work with JSON and JSONPath",
+		"ru": "Работа с JSON и JSONPath"
 	},
 	"icon": "json.png",
-	"description":"JSON",
-	"description_small":
-	{
-		"en": "JSON", 
+	"description": "JSON",
+	"description_small": {
+		"en": "JSON",
 		"ru": "JSON"
 	},
-	"major_version": 1,
+	"major_version": 2,
 	"minor_version": 0,
-	"developer_name": "Oyasumi Punpun", 
-	"developer_email": "likangt2012@gmail.com", 
+	"developer_name": "Oyasumi Punpun",
+	"developer_email": "likangt2012@gmail.com",
 	"developer_site": "https://github.com/CheshireCaat",
 	"api_version": 1,
-	"actions":
-	[
+	"actions": [
 		{
-			"name":"JsonGetValue",
-			"description":
-			{
+			"name": "JsonGetValue",
+			"description": {
 				"en": "Get value",
 				"ru": "Получить значение"
 			},
@@ -32,37 +27,16 @@
 			"is_element": false,
 			"interface": "json_parse_value_interface.js",
 			"select": "json_parse_value_select.js",
-			"code": 
-			[
+			"code": [
 				{
-					"file": "json_parse_value_code.js", 
+					"file": "json_parse_value_code.js",
 					"name": "json_parse_value_code"
 				}
 			]
 		},
 		{
-			"name":"JsonGetKey",
-			"description":
-			{
-				"en": "Get key",
-				"ru": "Получить ключ"
-			},
-			"template": "{{Data}} -> {{Save}}",
-			"is_element": false,
-			"interface": "json_parse_key_interface.js",
-			"select": "json_parse_key_select.js",
-			"code": 
-			[
-				{
-					"file": "json_parse_key_code.js", 
-					"name": "json_parse_key_code"
-				}
-			]
-		},
-		{
-			"name":"JsonGetAllValues",
-			"description":
-			{
+			"name": "JsonGetAllValues",
+			"description": {
 				"en": "Get all values",
 				"ru": "Получить все значения"
 			},
@@ -70,18 +44,33 @@
 			"is_element": false,
 			"interface": "json_parse_values_interface.js",
 			"select": "json_parse_values_select.js",
-			"code": 
-			[
+			"code": [
 				{
-					"file": "json_parse_values_code.js", 
+					"file": "json_parse_values_code.js",
 					"name": "json_parse_values_code"
 				}
 			]
 		},
 		{
-			"name":"JsonGetAllKeys",
-			"description":
-			{
+			"name": "JsonGetKey",
+			"description": {
+				"en": "Get key",
+				"ru": "Получить ключ"
+			},
+			"template": "{{Data}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_parse_key_interface.js",
+			"select": "json_parse_key_select.js",
+			"code": [
+				{
+					"file": "json_parse_key_code.js",
+					"name": "json_parse_key_code"
+				}
+			]
+		},
+		{
+			"name": "JsonGetAllKeys",
+			"description": {
 				"en": "Get all keys",
 				"ru": "Получить все ключи"
 			},
@@ -89,56 +78,50 @@
 			"is_element": false,
 			"interface": "json_parse_keys_interface.js",
 			"select": "json_parse_keys_select.js",
-			"code": 
-			[
+			"code": [
 				{
-					"file": "json_parse_keys_code.js", 
+					"file": "json_parse_keys_code.js",
 					"name": "json_parse_keys_code"
 				}
 			]
 		},
 		{
-			"name":"JsonGetCount",
-			"description":
-			{
-				"en": "Elements count",
-				"ru": "Количество элементов"
+			"name": "JsonChangeValue",
+			"description": {
+				"en": "Change value",
+				"ru": "Изменить значение"
 			},
 			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_get_count_interface.js",
-			"select": "json_get_count_select.js",
-			"code": 
-			[
+			"interface": "json_change_value_interface.js",
+			"select": "json_change_value_select.js",
+			"code": [
 				{
-					"file": "json_get_count_code.js", 
-					"name": "json_get_count_code"
+					"file": "json_change_value_code.js",
+					"name": "json_change_value_code"
 				}
 			]
 		},
 		{
-			"name":"JsonChangeFormat",
-			"description":
-			{
-				"en": "Change format",
-				"ru": "Изменить формат"
+			"name": "JsonRemoveValue",
+			"description": {
+				"en": "Remove value",
+				"ru": "Удалить значение"
 			},
 			"template": "{{Data}} -> {{Save}}",
 			"is_element": false,
-			"interface": "json_change_format_interface.js",
-			"select": "json_change_format_select.js",
-			"code": 
-			[
+			"interface": "json_remove_value_interface.js",
+			"select": "json_remove_value_select.js",
+			"code": [
 				{
-					"file": "json_change_format_code.js", 
-					"name": "json_change_format_code"
+					"file": "json_remove_value_code.js",
+					"name": "json_remove_value_code"
 				}
 			]
 		},
 		{
-			"name":"JsonCheckFormat",
-			"description":
-			{
+			"name": "JsonCheckFormat",
+			"description": {
 				"en": "Check if string matches JSON",
 				"ru": "Подходит ли строка под парсинг JSON"
 			},
@@ -146,182 +129,293 @@
 			"is_element": false,
 			"interface": "json_check_format_interface.js",
 			"select": "json_check_format_select.js",
-			"code": 
-			[
+			"code": [
 				{
-					"file": "json_check_format_code.js", 
+					"file": "json_check_format_code.js",
 					"name": "json_check_format_code"
+				}
+			]
+		},
+		{
+			"name": "JsonChangeFormat",
+			"description": {
+				"en": "Change format",
+				"ru": "Изменить формат"
+			},
+			"template": "{{Data}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_change_format_interface.js",
+			"select": "json_change_format_select.js",
+			"code": [
+				{
+					"file": "json_change_format_code.js",
+					"name": "json_change_format_code"
+				}
+			]
+		},
+		{
+			"name": "JsonGetCount",
+			"description": {
+				"en": "Elements count",
+				"ru": "Количество элементов"
+			},
+			"template": "{{Data}} -> {{Save}}",
+			"is_element": false,
+			"interface": "json_get_count_interface.js",
+			"select": "json_get_count_select.js",
+			"code": [
+				{
+					"file": "json_get_count_code.js",
+					"name": "json_get_count_code"
 				}
 			]
 		}
 	],
-	"localize": 
-	{
-		"Consider an example. Suppose we got a line of the form <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span> from a particular site. In a normal situation, we will have to write code to get, for example, the first message - <span style=\"color:black\">m1</span>. With JSONPath, we can simply specify the desired path - <span style=\"color:black\">$.messages[0]</span> and get what we needed as a result. If we briefly describe what exactly such a request means, we get the following: we take the root element using the <span style=\"color:black\">$</span> symbol, access the child element <span style=\"color:black\">messages</span> through the dot symbol, and indicate the index of the element we need.":
-		{
-			"ru":"Рассмотрим пример. Допустим, мы получили от определенного сайта строку вида <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span>. В обычной ситуации, нам придётся писать код, чтобы получить, например, первое сообщение - <span style=\"color:black\">m1</span>. С помощью JSONPath мы можем просто указать нужный путь - <span style=\"color:black\">$.messages[0]</span> и получить в результате то, что нам было необходимо. Если кратко описать, что именно значит такой запрос, то получится следующее: берём корневой элемент с помощью символа <span style=\"color:black\">$</span>, обращаемся к дочернему элементу <span style=\"color:black\">messages</span> через символ точки, и указываем индекс нужного нам элемента."
+	"localize": {
+		"Instead, use simple paths, as if you yourself modify or delete a value in the code. For example, we have a line like <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 10, \"tries\": 5}}</span> and want to change the value of <span style=\"color:black\">data.score</span>. To do this, we indicate as a query a string like <span style=\"color:black\">$.data.score</span> or <span style=\"color:black\">data.score</span> and as a value a number, for example, 40. As a result, we get a string like <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 40, \"tries\": 5}}</span>. This will also work with arrays. For example, if you have an array <span style=\"color:black\">array</span> and want to change the first element, use a query like <span style=\"color:black\">$.array[0]</span>.": {
+			"ru": "Вместо этого, используйте простые запросы, как будто вы сами изменяете или удаляете значения в коде. Например, у нас есть строка вида <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 10, \"tries\": 5}}</span> и мы хотим изменить значение у <span style=\"color:black\">data.score</span>. Чтобы сделать это, в качестве запроса возьмём строку вида <span style=\"color:black\">$.data.score</span> или <span style=\"color:black\">data.score</span> и в качестве значения число, например, 40. В результате мы получим строку вида <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 40, \"tries\": 5}}</span>. Это также работает с массивами. Например, если вы имеете массив <span style=\"color:black\">array</span> и хотите изменить первый элемент, используйте запрос вида <span style=\"color:black\">$.array[0]</span>."
 		},
-		"Please note, if you use the path <span style=\"color:black\">$.messages[*]</span> - the output will be a list of values, but the actions <span style=\"color:black\">Get Value</span> or <span style=\"color:black\">Get Key</span> will return only the first element from the list,i.e. <span style=\"color:black\">m1</span>, not <span style=\"color:black\">[m1, m2, m3]</span>. If you need a list, use the <span style=\"color:black\">Get all values</span> or <span style=\"color:black\">Get all keys</span> actions.":
-		{
-			"ru":"Обратите внимание, если использовать путь <span style=\"color:black\">$.messages[*]</span> - на выходе получится список значений, но действия <span style=\"color:black\">Получить значение</span> или <span style=\"color:black\">Получить ключ</span> вернут только первый элемент из списка, т.е <span style=\"color:black\">m1</span>, а не <span style=\"color:black\">[m1, m2, m3]</span>. Если вам нужен именно список, используйте действия <span style=\"color:black\">Получить все значения</span> или <span style=\"color:black\">Получить все ключи</span>."
+		"Instead, use simple paths, as if you yourself modify or delete a value in the code. For example, we have a line like <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 10, \"tries\": 5}}</span> and want to remove the value of <span style=\"color:black\">data.score</span>. To do this, we indicate as a query a string like <span style=\"color:black\">$.data.score</span> or <span style=\"color:black\">data.score</span>. As a result, we get a string like <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"tries\": 5}}</span>. This will also work with arrays. For example, if you have an array <span style=\"color:black\">array</span> and want to remove the first element, use a query like <span style=\"color:black\">$.array[0]</span>.": {
+			"ru": "Вместо этого, используйте простые запросы, как будто вы сами изменяете или удаляете значения в коде. Например, у нас есть строка вида <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"score\": 10, \"tries\": 5}}</span> и мы хотим удалить значение <span style=\"color:black\">data.score</span>. Чтобы сделать это, в качестве запроса возьмём строку вида <span style=\"color:black\">$.data.score</span> или <span style=\"color:black\">data.score</span>. В результате мы получим строку вида <span style=\"color:black\">{\"name\":\"John\", \"data\":{\"tries\": 5}}</span>. Это также работает с массивами. Например, если вы имеете массив <span style=\"color:black\">array</span> и хотите удалить первый элемент, используйте запрос вида <span style=\"color:black\">$.array[0]</span>."
 		},
-		"In a similar way, we can do the inverse transformation, i.e. make a JSON format string from the object. For example, we have an object with two parameters. One of them is an array of three numbers, the other is a simple string. Let it be student performance data for the subject. After converting, we can get a JSON string of the form like <span style=\"color:black\">{\"name\":\"John\",\"grades\":[5,5,4]}</span>":
-		{
-			"ru":"Подобным образом мы можем сделать и обратное преобразование, т.е. сделать из объекта строку в формате JSON. Например, у нас есть объект с двумя параметрами. Один из них - это массив из трёх чисел, другой - это обычная строка. Пусть это будет информация об успеваемости студента за предмет. После преобразования, мы получим JSON строку подобного вида - <span style=\"color:black\">{\"name\":\"John\",\"grades\":[5,5,4]}</span>"
+		"Consider an example. Suppose we got a line of the form <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span> from a particular site. In a normal situation, we will have to write code to get, for example, the first message - <span style=\"color:black\">m1</span>. With JSONPath, we can simply specify the desired path - <span style=\"color:black\">$.messages[0]</span> and get what we needed as a result. If we briefly describe what exactly such a request means, we get the following: we take the root element using the <span style=\"color:black\">$</span> symbol, access the child element <span style=\"color:black\">messages</span> through the dot symbol, and indicate the index of the element we need.": {
+			"ru": "Рассмотрим пример. Допустим, мы получили от определенного сайта строку вида <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span>. В обычной ситуации, нам придётся писать код, чтобы получить, например, первое сообщение - <span style=\"color:black\">m1</span>. С помощью JSONPath мы можем просто указать нужный путь - <span style=\"color:black\">$.messages[0]</span> и получить в результате то, что нам было необходимо. Если кратко описать, что именно значит такой запрос, то получится следующее: берём корневой элемент с помощью символа <span style=\"color:black\">$</span>, обращаемся к дочернему элементу <span style=\"color:black\">messages</span> через символ точки, и указываем индекс нужного нам элемента."
 		},
-		"Remember that this function is required for a simple conversion. You can use other actions with both the object and the string. It is recommended that you use the <span style=\"color:black\">Get value</span> or <span style=\"color:black\">Get all values</span> ​​actions if you want to get specific information about an object or JSON string.":
-		{
-			"ru":"Помните, что данная функция используется для простого преобразования. Вы можете использовать другие действия как с объектом, так и со строкой. Но всё же рекомендутся сразу обращаться к функциям <span style=\"color:black\">Получить значение</span> или <span style=\"color:black\">Получить все значения</span>, если вы хотите собрать особую информацию об объекте или строке в формате JSON."
+		"Consider an example. Suppose we got a line of the form <span style=\"color:black\">{\"Kate\":{\"rating\":5,\"count\":6},\"John\":{\"rating\":1,\"count\":2}}</span> from a particular site. We want to get the names of people whose rating is greater than or equal to 1. This can easily be done using a query like <span style=\"color:black\">$.[?(@.rate &gt;= 1)]</span>. Thus, as a result, we get a list of names satisfying our request.": {
+			"ru": "Рассмотрим пример. Допустим, мы получили от определенного сайта строку вида <span style=\"color:black\">{\"Kate\":{\"rating\":5,\"count\":6},\"John\":{\"rating\":1,\"count\":2}}</span>. Мы хотим получить имена людей, у которых рейтинг (rating) больше или равен 1. Это легко можно сделать с помощью запроса вида <span style=\"color:black\">$.[?(@.rate &gt;= 1)]</span>. Таким образом, в результате мы получим список имён, удволетворяющих нашему запросу."
 		},
-		"JSON is a text format for data exchange, serialization (storage) of objects, arrays, numbers, strings, logical values ​​and <span style=\"color:black\">null</span> values. It is based on JavaScript syntax, but still different from it: not every JavaScript code is JSON, and not every JSON is JavaScript code.":
-		{
-			"ru":"JSON - текстовый формат обмена данными, сериализации (хранения) объектов, массивов, чисел, строк, логических значений и значения <span style=\"color:black\">null</span>. Он основывается на синтаксисе JavaScript, однако всё же отличается от него: не каждый код на JavaScript является JSON, и не каждый JSON является кодом на JavaScript."
+		"Consider an example. Suppose we got a line of the form <span style=\"color:black\">{\"Kate\":{\"rating\":5,\"count\":6},\"John\":{\"rating\":1,\"count\":2}}</span> from a particular site. We want to get the names of people whose rating is greater than or equal to 1. This can easily be done using a query like <span style=\"color:black\">$.[?(@.rate &gt;= 1)]</span>. Thus, as a result, we get a first name satisfying our request.": {
+			"ru": "Рассмотрим пример. Допустим, мы получили от определенного сайта строку вида <span style=\"color:black\">{\"Kate\":{\"rating\":5,\"count\":6},\"John\":{\"rating\":1,\"count\":2}}</span>. Мы хотим получить имена людей, у которых рейтинг (rating) больше или равен 1. Это легко можно сделать с помощью запроса вида <span style=\"color:black\">$.[?(@.rate >= 1)]</span>. Таким образом, в результате мы получим первое имя, удволетворяющее нашему запросу."
 		},
-		"For example, checking for the string <span style=\"color:black\">{\"name\":\"John\"}</span> will return <span style=\"color:black\">true</span>, because it has a valid JSON format. The string <span style=\"color:black\">\"name\":\"John\"</span> will have an incorrect structure, it does not have curly braces, so the result will be <span style=\"color:black\">false</span>.":
-		{
-			"ru":"Например, проверка для строки <span style=\"color:black\">{\"name\":\"John\"}</span> вернет <span style=\"color:black\">true</span>, т.к. она имеет валидный формат JSON. Строка <span style=\"color:black\">\"name\":\"John\"</span> будет имеет неверную структуру, у неё отсутствуют фигурные скобки, поэтому результатом будет <span style=\"color:black\">false</span>."
+		"Consider an example. Suppose we got a line of the form <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span> from a particular site. We need to find out how many new messages came from the user. With JSONPath, we can simply specify the desired path - <span style=\"color:black\">$.messages[*]</span> and get the exact number of incoming messages.": {
+			"ru": "Рассмотрим пример. Допустим, мы получили от определенного сайта строку вида <span style=\"color:black\">{\"age\":100, \"name\":\"John\", \"messages\": [\"m1\", \"m2\", \"m3\"]}</span>. Мы хотим узнать, сколько новых сообщений было получено от пользователя. С помощью JSONPath мы можем просто указать нужный путь - <span style=\"color:black\">$.messages[*]</span> и получить точное число входящих сообщений."
 		},
-		"For example, changing format of the string <span style=\"color:black\">{\"name\":\"John\"}</span> will return object that contains one property - <span style=\"color:black\">name</span> with value <span style=\"color:black\">John</span>":
-		{
-			"ru":"Например, при изменении формата строки вида <span style=\"color:black\">{\"name\":\"John\"}</span> будет возвращён объект, содеражий одно свойство - <span style=\"color:black\">name</span> со значением <span style=\"color:black\">John</span>"
+		"Please note, if you use the path <span style=\"color:black\">$.messages[*]</span> - the output will be a list of values, but the actions <span style=\"color:black\">Get Value</span> or <span style=\"color:black\">Get Key</span> will return only the first element from the list,i.e. <span style=\"color:black\">m1</span>, not <span style=\"color:black\">[m1, m2, m3]</span>. If you need a list, use the <span style=\"color:black\">Get all values</span> or <span style=\"color:black\">Get all keys</span> actions.": {
+			"ru": "Обратите внимание, если использовать путь <span style=\"color:black\">$.messages[*]</span> - на выходе получится список значений, но действия <span style=\"color:black\">Получить значение</span> или <span style=\"color:black\">Получить ключ</span> вернут только первый элемент из списка, т.е <span style=\"color:black\">m1</span>, а не <span style=\"color:black\">[m1, m2, m3]</span>. Если вам нужен именно список, используйте действия <span style=\"color:black\">Получить все значения</span> или <span style=\"color:black\">Получить все ключи</span>."
 		},
-		"You can use simple parameter names to get the value you need. For example, having the line from the previous example, you can specify a query of the form <span style=\"color:black\">age</span> as a path and get the value of this property - <span style=\"color:black\">100</span>.":
-		{
-			"ru":"Вы можете использовать простые названия параметров, чтобы получить необходимое значение. Например, имея строку из предыдущего примера вы можете указать в качестве пути запрос вида <span style=\"color:black\">age</span> и получить значение этого свойства - <span style=\"color:black\">100</span>."
+		"Please note that if you specify as a variable for checking not a string, but a variable of any other type - the result will always be <span style=\"color:black\">false</span>. In this regard, this action is different from the JavaScript function <span style=\"color:black\">JSON.parse()</span>, as there is an additional check for suitable types.": {
+			"ru": "Обратите внимание, если вы укажете в качестве переменной для проверки не строку, а переменную любого другого типа - результатом всегда будет <span style=\"color:black\">false</span>. В этом плане данное действие отличается от JavaScript функции <span style=\"color:black\">JSON.parse()</span>, так как происходит дополнительная проверка на подходящие типы."
 		},
-		"Typical examples of using this function are working with the API of a website or, more often in the context of BAS, working with Cookies. In BAS, cookies are presented to the user in JSON format strings. This often causes difficulties. But with JSONPath, you can easily get the data you need.":
-		{
-			"ru":"Типичные примеры применения данной функции - это работа с API какого-либо веб-сайта или, что бывает чаще в контексте BAS, работа с Cookies. В BAS куки представлены для пользователя в формате JSON строки. Это зачастую вызывает трудности. Но с помощью JSONPath, вы с лёгкостью сможете достать нужные данные."
+		"Please note, if you use the path <span style=\"color:black\">$.messages[*]</span> - the output will be a list of values and the number of elements will be 3, but if you specify a query <span style=\"color:black\">$.messages</span>, then the number of elements will be 1, because this query points to the object as a whole, and not to its elements.": {
+			"ru": "Обратите внимание, если использовать путь <span style=\"color:black\">$.messages[*]</span> - на выходе получится список значений и число элементов будет равно 3, но если вы укажете запрос вида <span style=\"color:black\">$.messages</span> число элементов будет равно 1, потому что данный запрос указывает на объект в целом, а не на его элементы."
 		},
-		"See full documentation and examples <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-en.html'); return false;\"><span class=\"tr\">here.</span></a>":
-		{
-			"ru":"Смотрите полную документацию и примеры <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-ru.html'); return false;\"><span class=\"tr\">здесь.</span></a>"
+		"Please note that you cannot use complex paths in this action. For example, changing or deleting a value using a query like <span style=\"color:black\">$.data[?(@.price == 10)]</span> does not work, since it is not possible to recognize a child in this form.": {
+			"ru": "Обратите внимание, в данном действии нельзя использовать сложные пути. Например, изменить или удалить значение с помощью запроса вида <span style=\"color:black\">$.data[?(@.price == 10)]</span> не получится, так как распознать дочерний элемент в таком виде не представляется возможным."
 		},
-		"Please note that if you specify as a variable for checking not a string, but a variable of any other type - the result will always be <span style=\"color:black\">false</span>.":
-		{
-			"ru":"Обратите внимание, если вы укажете в качестве переменной для проверки не строку, а переменную любого другого типа - результатом всегда будет <span style=\"color:black\">false</span>."
+		"Please note, if you use this action - the output will be always a list of values, but the action <span style=\"color:black\">Get key</span> will return only the first element from the list.": {
+			"ru": "Обратите внимание, если вы используете это действие - результатом всегда будет список значений, но действие <span style=\"color:black\">Получить ключ</span> вернёт только первый подходящий элемент из списка."
 		},
-		"JSONPath (JPath) is a powerful tool for working with the JSON data type. It is built on the basis of logic, which is very similar to XPath, but has some limitations, because the data type itself is much simpler than Xml.":
-		{
-			"ru":"JSONPath (JPath) - мощный инструмент для работы с типом данных JSON. Он построен на основе логики, которая очень похожа на XPath, но имеет некоторые ограничения, т.к. сам тип данных намного проще Xml."
+		"Please note, if you use this action - the output will be always a single value, but the action <span style=\"color:black\">Get all keys</span> will return all elements as list.": {
+			"ru": "Обратите внимание, если вы используете это действие - результатом всегда будет одно значение, но действие <span style=\"color:black\">Получить все ключи</span> вернёт все подходящие элементы в виде списка."
 		},
-		"Using this technology, we can quickly get data from JavaScript objects or strings in JSON format. In addition, this greatly simplifies the work, as usually, parsing JSON requires writing code.":
-		{
-			"ru":"С помощью данной технологии, мы можем быстро получать данные из JavaScript объектов или строк в формате JSON. Кроме того, это сильно упрощает работу, т.к. обычно, чтобы распарсить JSON, требуется писать код."
+		"In a similar way, we can do the inverse transformation, i.e. make a JSON format string from the object. For example, we have an object with two parameters. One of them is an array of three numbers, the other is a simple string. Let it be student performance data for the subject. After converting, we can get a JSON string of the form like <span style=\"color:black\">{\"name\":\"John\",\"grades\":[5,5,4]}</span>.": {
+			"ru": "Подобным образом мы можем сделать и обратное преобразование, т.е. сделать из объекта строку в формате JSON. Например, у нас есть объект с двумя параметрами. Один из них - это массив из трёх чисел, другой - это обычная строка. Пусть это будет информация об успеваемости студента за предмет. После преобразования, мы получим JSON строку подобного вида - <span style=\"color:black\">{\"name\":\"John\",\"grades\":[5,5,4]}</span>."
 		},
-		"JSON string or object to format changing. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value":
-		{
-			"ru":"JSON строка или объект изменения формата. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
+		"Remember that this function is required for a simple conversion. You can use other actions with both the object and the string. It is recommended that you use the <span style=\"color:black\">Get value</span> or <span style=\"color:black\">Get all values</span> ​​actions if you want to get specific information about an object or JSON string.": {
+			"ru": "Помните, что данная функция используется для простого преобразования. Вы можете использовать другие действия как с объектом, так и со строкой. Но всё же рекомендутся сразу обращаться к функциям <span style=\"color:black\">Получить значение</span> или <span style=\"color:black\">Получить все значения</span>, если вы хотите собрать особую информацию об объекте или строке в формате JSON."
 		},
-		"JSON string or object to parse. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.":
-		{
-			"ru":"JSON строка или объект для парсинга. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
+		"JSON is a text format for data exchange, serialization (storage) of objects, arrays, numbers, strings, logical values ​​and <span style=\"color:black\">null</span> values. It is based on JavaScript syntax, but still different from it: not every JavaScript code is JSON, and not every JSON is JavaScript code.": {
+			"ru": "JSON - текстовый формат обмена данными, сериализации (хранения) объектов, массивов, чисел, строк, логических значений и значения <span style=\"color:black\">null</span>. Он основывается на синтаксисе JavaScript, однако всё же отличается от него: не каждый код на JavaScript является JSON, и не каждый JSON является кодом на JavaScript."
 		},
-		"With this action, you can see if you can use the string to parse JSON and retrieve data to avoid possible errors.":
-		{
-			"ru":"С помощью этого действия вы можете убедиться, можно ли использовать строку для парсинга JSON и получения данных, чтобы избежать возможных ошибок."
+		"For example, checking for the string <span style=\"color:black\">{\"name\":\"John\"}</span> will return <span style=\"color:black\">true</span>, because it has a valid JSON format. The string <span style=\"color:black\">\"name\":\"John\"</span> will have an incorrect structure, it does not have curly braces, so the result will be <span style=\"color:black\">false</span>.": {
+			"ru": "Например, проверка для строки <span style=\"color:black\">{\"name\":\"John\"}</span> вернет <span style=\"color:black\">true</span>, т.к. она имеет валидный формат JSON. Строка <span style=\"color:black\">\"name\":\"John\"</span> будет имеет неверную структуру, у неё отсутствуют фигурные скобки, поэтому результатом будет <span style=\"color:black\">false</span>."
 		},
-		"With this action, you can convert a JSON string to a JavaScript object and vice versa.":
-		{
-			"ru":"С помощью этого действия вы можете преобразовать строку в формате JSON в объект JavaScript и наоборот."
+		"For example, changing format of the string <span style=\"color:black\">{\"name\":\"John\"}</span> will return object that contains one property - <span style=\"color:black\">name</span> with value <span style=\"color:black\">John</span>": {
+			"ru": "Например, при изменении формата строки вида <span style=\"color:black\">{\"name\":\"John\"}</span> будет возвращён объект, содеражий одно свойство - <span style=\"color:black\">name</span> со значением <span style=\"color:black\">John</span>"
 		},
-		"JSONPath query should not be empty. If you want to change the data format, use the 'Change format' action.":
-		{
-			"ru":"JSONPath запрос не должен быть пустым. Если вы хотите изменить формат данных, испольуйте действие 'Изменить формат'."
+		"You can also use simplified syntax for queries. For example, the result of queries <span style=\"color:black\">$.messages[*]</span> and <span style=\"color:black\">messages[*]</span> will be the same. The module itself will add the necessary characters at the beginning of the query string. This also applies to the search for any elements (not only root), i.e. for queries of the form <span style=\"color:black\">$..messages[*]</span> and <span style=\"color:black\">..messages[*]</span> will be the same too.": {
+			"ru": "Вы также можете использовать упрощённый синтаксис для запросов. Например, результат запросов <span style=\"color:black\">$.messages[*]</span> и <span style=\"color:black\">messages[*]</span> будет одинаковым. Модуль сам добавит необходимые символы в начале строки запроса. Это также касается поиска любых элементов (не только корневого), т.е. для запросов вида <span style=\"color:black\">$..messages[*]</span> и <span style=\"color:black\">..messages[*]</span> результат также будет одинаковым."
 		},
-		"If the result of the action is a single value, a list containing this value will be returned.":
-		{
-			"ru":"Если результатом действия будет одно значение, будет возвращён список, содержащий это значение."
+		"You can use simple parameter names to get the value you need. For example, having the line from the previous example, you can specify a query of the form <span style=\"color:black\">age</span> as a path and get the value of this property - <span style=\"color:black\">100</span>.": {
+			"ru": "Вы можете использовать простые названия параметров, чтобы получить необходимое значение. Например, имея строку из предыдущего примера вы можете указать в качестве пути запрос вида <span style=\"color:black\">age</span> и получить значение этого свойства - <span style=\"color:black\">100</span>."
 		},
-		"If the result of the action is a single key, a list containing this key will be returned.":
-		{
-			"ru":"Если результатом действия будет один ключ, будет возвращён список, содержащий этот ключ."
+		"Typical examples of using this function are working with the API of a website or, more often in the context of BAS, working with Cookies. In BAS, cookies are presented to the user in JSON format strings. This often causes difficulties. But with JSONPath, you can easily get the data you need.": {
+			"ru": "Типичные примеры применения данной функции - это работа с API какого-либо веб-сайта или, что бывает чаще в контексте BAS, работа с Cookies. В BAS куки представлены для пользователя в формате JSON строки. Это зачастую вызывает трудности. Но с помощью JSONPath, вы с лёгкостью сможете достать нужные данные."
 		},
-		"If an error occurs during parsing, an empty string will be returned.":
-		{
-			"ru":"Если во время парсинга произойдёт ошибка, будет возвращена пустая строка."
+		"See full documentation and examples <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-en.html'); return false;\"><span class=\"tr\">here.</span></a>": {
+			"ru": "Смотрите полную документацию и примеры <a href=\"#\" onclick=\"BrowserAutomationStudio_OpenUrl('https://cheshirecaat.github.io/BAS.Modules/jpath-documentation-ru.html'); return false;\"><span class=\"tr\">здесь.</span></a>"
 		},
-		"Check that selected variable is valid JSON string and return the result to a variable.":
-		{
-			"ru":"Проверить, что выбранная переменная является допустимой строкой JSON и сохранить результат в переменную."
-		},	
-		"New data format for your variable. You can use only two options - String or JSON.":
-		{
-			"ru":"Новый формат данных для вашей переменной. Вы можете использовать только два варианта - String или JSON."
+		"Use action <span style=\"color:black\">Check if string matches JSON</span> to make sure that string conversion is possible or just use <span style=\"color:black\">Ignore Errors</span> to handle possible errors.": {
+			"ru": "Используйте действие <span style=\"color:black\">Подходит ли строка под парсинг JSON</span>, чтобы проверить, что преобразование из строки возможно. Или просто используйте <span style=\"color:black\">Игнорировать ошибки</span>, чтобы обработать возможные исключения."
 		},
-		"Variable that stores the result of parsing (All values ​​or an list of one value).":
-		{
-			"ru":"Переменная, содержащая результат парсинга (Все значения или список, состоящий из одного значения)."
+		"The type of the returned object will be the same as the original variable. This means that if you specify a string, the string will be returned; if you specify an object, the object will be returned.": {
+			"ru": "Тип возвращаемого объекта будет таким же, как и у оригинальной переменной. Это означает, что если вы укажете строку, будет возвращена строка; если вы вы укажете объект, будет возвращён объект."
 		},
-		"Variable that stores the result of parsing (All keys ​​or an list of one key).":
-		{
-			"ru":"Переменная, содержащая результат парсинга (Все ключи или список, состоящий из одного ключа)."
+		"JSONPath (JPath) is a powerful tool for working with the JSON data type. It is built on the basis of logic, which is very similar to XPath, but has some limitations, because the data type itself is much simpler than Xml.": {
+			"ru": "JSONPath (JPath) - мощный инструмент для работы с типом данных JSON. Он построен на основе логики, которая очень похожа на XPath, но имеет некоторые ограничения, т.к. сам тип данных намного проще Xml."
 		},
-		"Variable that stores the result of format changing (object or string).":
-		{
-			"ru":"Переменная, содержащая результат изменения формата (объект или строка)."
+		"Using this technology, we can quickly get data from JavaScript objects or strings in JSON format. In addition, this greatly simplifies the work, as usually, parsing JSON requires writing code.": {
+			"ru": "С помощью данной технологии, мы можем быстро получать данные из JavaScript объектов или строк в формате JSON. Кроме того, это сильно упрощает работу, т.к. обычно, чтобы распарсить JSON, требуется писать код."
 		},
-		"Variable that stores the result of format checking (true or false).":
-		{
-			"ru":"Переменная, содержащая результат проверки формата (true или false)."
+		"JSON string or object to format changing. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.": {
+			"ru": "JSON строка или объект для изменения формата. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
 		},
-		"Variable that stores the result of parsing (First value only).":
-		{
-			"ru":"Переменная, содержащая результат парсинга (Первое подходящее значение)."
+		"JSON string or object to change value. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.": {
+			"ru": "JSON строка или объект для изменения значения. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
 		},
-		"Variable that stores the result of parsing (First key only).":
-		{
-			"ru":"Переменная, содержащая результат парсинга (Первый подходящий ключ)."
+		"JSON string or object to remove value. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.": {
+			"ru": "JSON строка или объект для удаления значения. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
 		},
-		"Execute JPath query if needeed and get elements count.":
-		{
-			"ru":"Выполнить запрос JPath, если необходимо, и получить количество элементов."
+		"JSON string or object to parse. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.": {
+			"ru": "JSON строка или объект для парсинга. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
 		},
-		"Execute JPath query and get all matching values.":
-		{
-			"ru":"Выполнить запрос JPath и получить все подходящие значения."
+		"JSON string or object to count. You can specify a valid JSON string here or an object whose type is not simple. Simple types include numbers, boolean values, null value.": {
+			"ru": "JSON строка или объект для подсчёта. Вы можете указать здесь валидную JSON строку либо объект, тип которого не является простым. К простым типам относятся числа, булевы значения, значение null."
 		},
-		"Execute JPath query and get one value (first matching).":
-		{
-			"ru":"Выполнить запрос JPath и получить одно значение (первое подходящее)."
+		"With this action, you can see if you can use the string to parse JSON and retrieve data to avoid possible errors.": {
+			"ru": "С помощью этого действия вы можете убедиться, можно ли использовать строку для парсинга JSON и получения данных, чтобы избежать возможных ошибок."
 		},
-		"Execute JPath query and get all matching keys.":
-		{
-			"ru":"Выполнить запрос JPath и получить все подходящие ключи."
+		"With this action, you can convert a JSON string to a JavaScript object and vice versa.": {
+			"ru": "С помощью этого действия вы можете преобразовать строку в формате JSON в объект JavaScript и наоборот."
 		},
-		"Execute JPath query and get one key (first matching).":
-		{
-			"ru":"Выполнить запрос JPath и получить один ключ (первый подходящий)."
+		"JSONPath query can be empty in this action. In this case, the total number of keys of the object or string in JSON format will be calculated.": {
+			"ru": "JSONPath запрос может быть пустым в этом действии. В этом случае будет подсчитано общее количество ключей объекта или строки в формате JSON."
 		},
-		"JSON string or object to change": 
-		{
-			"ru":"JSON строка или объект для изменения"
+		"JSONPath query should not be empty. If you want to change the data format, use the <span style=\"color:black\">Change format</span> action.": {
+			"ru": "JSONPath запрос не должен быть пустым. Если вы хотите изменить формат данных, испольуйте действие <span style=\"color:black\">Изменить формат</span>."
 		},
-		"JSON string or object to parse": 
-		{
-			"ru":"JSON строка или объект для парсинга"
+		"If the object at the specified query is not found or will not contain elements, the result will be zero.": {
+			"ru": "Если объект по указанному запросу не будет найден или не будет содержать элементов, результатом будет ноль."
 		},
-		"String variable to check":
-		{
-			"ru":"Строковая переменная для проверки"
+		"If you specify an object of the wrong type or an incorrect format, the result will be the same object.": {
+			"ru": "Если вы укажете объект неподходящего типа, либо неверный формат, результатом будет тот же объект."
 		},
-		"JSONPath query to parse": 
-		{
-			"ru":"JSONPath запрос для парсинга"
+		"If the result of the action is a single value, a list containing this value will be returned.": {
+			"ru": "Если результатом действия будет одно значение, будет возвращён список, содержащий это значение."
 		},
-		"Variable to save":
-		{
-			"ru":"Переменная, в которую сохранить результат"
+		"If the result of the action is a single key, a list containing this key will be returned.": {
+			"ru": "Если результатом действия будет один ключ, будет возвращён список, содержащий этот ключ."
 		},
-		"New data format":
-		{
-			"ru":"Новый формат данных"
+		"If an error occurs during parsing, an empty string will be returned.": {
+			"ru": "Если во время парсинга произойдёт ошибка, будет возвращена пустая строка."
+		},
+		"Check that selected variable is valid JSON string and return the result to a variable.": {
+			"ru": "Проверить, что выбранная переменная является допустимой строкой JSON и сохранить результат в переменную."
+		},
+		"Change the format of the selected JSON string or object and return the result to the variable.": {
+			"ru": "Изменить формат выбранной JSON строки или объекта и сохранить результат в переменную."
+		},
+		"New data format for your variable. You can use only two options: String or JSON.": {
+			"ru": "Новый формат данных для вашей переменной. Вы можете использовать только два варианта: String или JSON."
+		},
+		"Variable that stores the result of parsing (All values ​​or an list of one value).": {
+			"ru": "Переменная, содержащая результат парсинга (Все значения или список, состоящий из одного значения)."
+		},
+		"Variable that stores the result of changing (Modified object or string).": {
+			"ru": "Переменная, содержащая результат изменения (Модифицированный объект или строка)."
+		},
+		"Variable that stores the result of removing (Modified object or string).": {
+			"ru": "Переменная, содержащая результат удаления (Модифицированный объект или строка)."
+		},
+		"Variable that stores the result of parsing (All keys ​​or an list of one key).": {
+			"ru": "Переменная, содержащая результат парсинга (Все ключи или список, состоящий из одного ключа)."
+		},
+		"Variable that stores the result of format changing (object or string).": {
+			"ru": "Переменная, содержащая результат изменения формата (объект или строка)."
+		},
+		"Variable that stores the result of format checking (true or false).": {
+			"ru": "Переменная, содержащая результат проверки формата (true или false)."
+		},
+		"Variable that stores the result of parsing (First value only).": {
+			"ru": "Переменная, содержащая результат парсинга (Первое подходящее значение)."
+		},
+		"Variable that stores the result of parsing (First key only).": {
+			"ru": "Переменная, содержащая результат парсинга (Первый подходящий ключ)."
+		},
+		"Variable that stores the result of count (Elements count).": {
+			"ru": "Переменная, содержащая результат подсчёта (Количество элементов)."
+		},
+		"Execute JPath query and get all matching values.": {
+			"ru": "Выполнить запрос JPath и получить все подходящие значения."
+		},
+		"Execute JPath query and get one value (first matching).": {
+			"ru": "Выполнить запрос JPath и получить одно значение (первое подходящее)."
+		},
+		"Execute JPath query and get all matching keys.": {
+			"ru": "Выполнить запрос JPath и получить все подходящие ключи."
+		},
+		"Execute JPath query and get one key (first matching).": {
+			"ru": "Выполнить запрос JPath и получить один ключ (первый подходящий)."
+		},
+		"Execute JPath query and get elements count.": {
+			"ru": "Выполнить запрос JPath и получить количество элементов."
+		},
+		"Execute JPath query and change object value.": {
+			"ru": "Выполнить запрос JPath и изменить значение объекта."
+		},
+		"Execute JPath query and remove object value.": {
+			"ru": "Выполнить запрос JPath и удалить значение объекта."
+		},
+		"There are six items for the given query.": {
+			"ru": "Есть шесть элементов, удовлетворяющих запросу."
+		},
+		"There are no items for the given query.": {
+			"ru": "Нет элементов, удовлетворяющих запросу."
+		},
+		"New value for object that mathes JSONPath query.": {
+			"ru": "Новое значение для объекта, удовлетворяющего запросу."
+		},
+		"Any JSONPath request that you need. Can be empty.": {
+			"ru": "Любой нужный вам запрос JSONPath. Может быть пустым."
+		},
+		"Any JSONPath request that you need.": {
+			"ru": "Любой нужный вам запрос JSONPath."
+		},
+		"JSON string or object to remove": {
+			"ru": "JSON строка или объект для удаления"
+		},
+		"JSON string or object to change": {
+			"ru": "JSON строка или объект для изменения"
+		},
+		"JSON string or object to parse": {
+			"ru": "JSON строка или объект для парсинга"
+		},
+		"JSON string or object to count": {
+			"ru": "JSON строка или объект для подсчёта"
+		},
+		"JSON string to check": {
+			"ru": "JSON строка для проверки"
+		},
+		"JSONPath query to change value": {
+			"ru": "JSONPath запрос для изменения значения"
+		},
+		"JSONPath query to remove value": {
+			"ru": "JSONPath запрос для удаления значения"
+		},
+		"JSONPath query to parse": {
+			"ru": "JSONPath запрос для парсинга"
+		},
+		"JSONPath query to count": {
+			"ru": "JSONPath запрос для подсчёта"
+		},
+		"Variable to save": {
+			"ru": "Переменная, в которую сохранить результат"
+		},
+		"New value for object": {
+			"ru": "Новое значение для объекта"
+		},
+		"New data format": {
+			"ru": "Новый формат данных"
+		},
+		"The second to last item in cart.": {
+			"ru": "Второй с конца товар в корзине."
+		},
+		"The titles of all dialogs.": {
+			"ru": "Заголовки всех диалогов."
+		},
+		"The third item in cart.": {
+			"ru": "Третий товар в корзине."
+		},
+		"All possible elements.": {
+			"ru": "Все возможные элементы."
+		},
+		"The age of user.": {
+			"ru": "Возраст пользователя."
 		}
 	},
-	"engine": 
-	[
+	"engine": [
 		"engine.js"
 	],
 	"browser": [],
-	"depends": []	
+	"depends": []
 }

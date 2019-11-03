@@ -1,5 +1,5 @@
 try {
-    <%= variable %> = JPath.queryValues(<%= data %>, <%= path %>);
+    <%= variable %> = JPath.values(<%= data %>, <%= path %>);
 } catch (e) {
     fail(e)
 }

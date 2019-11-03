@@ -1,14 +1,15 @@
 var Save = this.$el.find("#Save").val().toUpperCase();
+var Value = GetInputConstructorValue("Value", loader);
 var Data = GetInputConstructorValue("Data", loader);
 var Path = GetInputConstructorValue("Path", loader);
 
 if (Data["original"].length == 0) {
-    Invalid("Data to parse is empty");
+    Invalid("Data to change value is empty");
     return;
 }
 
 if (Path["original"].length == 0) {
-    Invalid("Path to parse is empty");
+    Invalid("Path to change value is empty");
     return;
 }
 
@@ -18,9 +19,10 @@ if (Save.length == 0) {
 }
 
 try {
-    var code = loader.GetAdditionalData() + _.template($("#json_parse_keys_code").html())(
+    var code = loader.GetAdditionalData() + _.template($("#json_change_value_code").html())(
         {
             variable: "VAR_" + Save,
+            value: Value["updated"],
             data: Data["updated"],
             path: Path["updated"]
         });

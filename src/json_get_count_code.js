@@ -1,8 +1,6 @@
-try
-{
-	<%= variable %> = JPath.getCount(<%= data %>, <%= path %>);
+try {
+	<%= variable %> = JPath.count(<%= data %>, <%= path %>);
 }
-catch (e)
-{
+catch (e) {
 	fail(e);
 }

@@ -1,5 +1,5 @@
 try {
-    <%= variable %> = JPath.queryKey(<%= data %>, <%= path %>);
+    <%= variable %> = JPath.key(<%= data %>, <%= path %>);
 } catch (e) {
     fail(e)
 }

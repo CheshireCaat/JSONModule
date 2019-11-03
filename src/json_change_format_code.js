@@ -1,8 +1,6 @@
-try
-{
+try {
 	<%= variable %> = JPath.changeFormat(<%= data %>, <%= type %>);
 }
-catch (e)
-{
+catch (e) {
 	fail(e);
 }

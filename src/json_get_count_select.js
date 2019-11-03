@@ -3,12 +3,12 @@ var Data = GetInputConstructorValue("Data", loader);
 var Path = GetInputConstructorValue("Path", loader);
 
 if (Data["original"].length == 0) {
-    Invalid("Data is empty");
+    Invalid("Data to count is empty");
     return;
 }
 
 if (Save.length == 0) {
-    Invalid("Variable is empty");
+    Invalid("Variable to save is empty");
     return;
 }
 
