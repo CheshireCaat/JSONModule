@@ -1,11 +1,26 @@
+/**
+ * Check if the object has 'string' type or not.
+ * @param {Object} obj Object to check.
+ * @returns Object has string type.
+ */
 var isString = function (obj) {
     return Object.prototype.toString.call(obj) === '[object String]';
 };
 
+/**
+ * Check if the object has 'object' type or not.
+ * @param {Object} obj Object to check.
+ * @returns Object has object type.
+ */
 var isObject = function (obj) {
     return Object.prototype.toString.call(obj) === '[object Object]';
 };
 
+/**
+ * Check if the object has 'array' type or not.
+ * @param {Object} obj Object to check.
+ * @returns Object has array type.
+ */
 var isArray = function (obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
 };
@@ -15,19 +30,19 @@ function JSONPath() {
     this.normalize = function (path) {
         var subx = [];
 
-        path = path.indexOf('$.') !== 0 ? ('$.' + path) : path;
         path = path.indexOf('..') === 0 ? ('$' + path) : path;
+        path = path.indexOf('$.') !== 0 ? ('$.' + path) : path;
 
         return path
-            .replace(/[\['](\??\(.*?\))[\]']/g, function (_, $1) {
+            .replace(/[\['](\??\(.*?\))[\]']/g, function (_$0, $1) {
                 return "[#" + (subx.push($1) - 1) + "]";
-            })
-            .replace(/#([0-9]+)/g, function (_, $1) {
-                return subx[$1];
             })
             .replace(/'?\.'?|\['?/g, ";")
             .replace(/;;;|;;/g, ";..;")
-            .replace(/;$|'?\]|'$/g, "");
+            .replace(/;$|'?\]|'$/g, "")
+            .replace(/#([0-9]+)/g, function (_$0, $1) {
+                return subx[$1];
+            });
     };
 
     this.query = function (obj, expression, output) {
@@ -133,7 +148,6 @@ function JSONPath() {
 
         var evaluate = function (x, _v, _vname) {
             try {
-                log(x + "|" + _v + "|" + _vname);
                 return _v && eval(x.replace(/@/g, "_v"));
             }
             catch (e) {
@@ -156,7 +170,7 @@ function JSONPath() {
  */
 JSONPath.prototype.changeFormat = function (obj, format) {
     switch (format.toLowerCase()) {
-        case 'string':  return convertToString(obj);
+        case 'string': return convertToString(obj);
         case 'json': return convertToObject(obj);
         default: return obj;
     }
@@ -204,7 +218,7 @@ JSONPath.prototype.checkFormat = function (obj) {
  * @returns {Object|String} Modified object or string.
  */
 JSONPath.prototype.change = function (obj, path, val) {
-    path = this.normalize(path).split(';'); 
+    path = this.normalize(path).split(';');
     path.shift();
 
     var result = baseChange(convertToObject(obj), path, val);
@@ -241,7 +255,7 @@ var baseChange = function (obj, path, value) {
  * @returns {Object|String} Modified object or string.
  */
 JSONPath.prototype.remove = function (obj, path) {
-    path = this.normalize(path).split(';'); 
+    path = this.normalize(path).split(';');
     path.shift();
 
     var result = baseRemove(convertToObject(obj), path);
