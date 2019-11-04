@@ -28,7 +28,7 @@
     {
       id: "Save", 
       description: tr("Variable to save"), 
-      default_variable: "PARSED_JSON_FORMATTED",
+      default_variable: "FORMATTED_JSON",
       help:
       {
         description: tr("Variable that stores the result of format changing (object or string).")

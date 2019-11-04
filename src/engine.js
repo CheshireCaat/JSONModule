@@ -156,13 +156,31 @@ function JSONPath() {
  */
 JSONPath.prototype.changeFormat = function (obj, format) {
     switch (format.toLowerCase()) {
-        case 'string':
-            return isObject(obj) ? JSON.stringify(obj) : obj;
-        case 'json':
-            return isString(obj) ? JSON.parse(obj) : obj;
+        case 'string':  return convertToString(obj);
+        case 'json': return convertToObject(obj);
         default: return obj;
     }
 };
+
+/**
+ * @private
+ * Converts object to string.
+ * @param {String|Object} obj Object or string to convert.
+ * @returns Converted object.
+ */
+var convertToString = function (obj) {
+    return isObject(obj) ? JSON.stringify(obj) : obj;
+};
+
+/**
+ * @private
+ * Converts string to object.
+ * @param {String|Object} obj Object or string to convert.
+ * @returns Converted string.
+ */
+var convertToObject = function (obj) {
+    return isString(obj) ? JSON.parse(obj) : obj;
+}
 
 /**
  * Check that string has a valid JSON format.
@@ -186,10 +204,11 @@ JSONPath.prototype.checkFormat = function (obj) {
  * @returns {Object|String} Modified object or string.
  */
 JSONPath.prototype.change = function (obj, path, val) {
-    path = this.normalize(path).split(';'); path.shift();
-    var result = baseChange(
-        this.changeFormat(obj, 'json'), path, val);
-    return isString(obj) ? this.changeFormat(result, 'string') : result;
+    path = this.normalize(path).split(';'); 
+    path.shift();
+
+    var result = baseChange(convertToObject(obj), path, val);
+    return isString(obj) ? convertToString(result) : result;
 };
 
 /**
@@ -222,10 +241,11 @@ var baseChange = function (obj, path, value) {
  * @returns {Object|String} Modified object or string.
  */
 JSONPath.prototype.remove = function (obj, path) {
-    path = this.normalize(path).split(';'); path.shift();
-    var result = baseRemove(
-        this.changeFormat(obj, 'json'), path);
-    return isString(obj) ? this.changeFormat(result, 'string') : result;
+    path = this.normalize(path).split(';'); 
+    path.shift();
+
+    var result = baseRemove(convertToObject(obj), path);
+    return isString(obj) ? convertToString(result) : result;
 };
 
 /**
@@ -258,7 +278,7 @@ var baseRemove = function (obj, path) {
  * @returns {number} Number of elements.
  */
 JSONPath.prototype.count = function (obj, path) {
-    var jsonObj = this.changeFormat(obj, 'json');
+    var jsonObj = convertToObject(obj);
     if (path === '') {
         return Object.keys(jsonObj).length;
     }
@@ -272,7 +292,7 @@ JSONPath.prototype.count = function (obj, path) {
  * @returns {Object} Array of matching values.
  */
 JSONPath.prototype.values = function (obj, path) {
-    var values = this.query(this.changeFormat(obj, 'json'), path);
+    var values = this.query(convertToObject(obj), path);
     return values === false ? '' : values;
 };
 
@@ -294,7 +314,7 @@ JSONPath.prototype.value = function (obj, path) {
  * @returns {Array} Array of matching keys.
  */
 JSONPath.prototype.keys = function (obj, path) {
-    var keys = this.query(this.changeFormat(obj, 'json'), path, 'key');
+    var keys = this.query(convertToObject(obj), path, 'key');
     return keys === false ? '' : keys;
 };
 

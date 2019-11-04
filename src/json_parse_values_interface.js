@@ -18,6 +18,14 @@
 			default_selector: "string", 
 			disable_int: true, 
 			value_string: "",
+			variants: [
+
+				"dialogs[*].title<br/><span style='color:gray;font-size:small'>" + tr("The titles of all dialogs.") + "</span>",
+				"user.age<br/><span style='color:gray;font-size:small'>" + tr("The age of user.") + "</span>",
+				"..cart[2]<br/><span style='color:gray;font-size:small'>" + tr("The third item in cart.") + "</span>",
+				"..cart[-2]<br/><span style='color:gray;font-size:small'>" + tr("The second to last item in cart.") + "</span>",
+				"..*<br/><span style='color:gray;font-size:small'>" + tr("All possible elements.") + "</span>",
+			],
 			help:
 			{
 				description: tr("Any JSONPath request that you need."),
