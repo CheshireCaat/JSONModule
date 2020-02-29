@@ -293,10 +293,11 @@ var baseRemove = function (obj, path) {
  */
 JSONPath.prototype.count = function (obj, path) {
     var jsonObj = convertToObject(obj);
-    if (path === '') {
-        return Object.keys(jsonObj).length;
+    if (path) {
+        var keys = this.query(jsonObj, path);
+        return keys === false ? 0 : keys.length;
     }
-    return this.query(jsonObj, path).length;
+    return Object.keys(jsonObj).length;
 };
 
 /**
