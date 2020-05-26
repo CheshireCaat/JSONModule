@@ -1,0 +1,5 @@
+# Exclude machine-specific vs code settings
+.vscode/settings.json
+
+# Exclude machine-specific vs code launch
+.vscode/launch.json
